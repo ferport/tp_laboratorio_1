@@ -3,9 +3,6 @@
 
 #include "funciones.h"
 
-//int menu(void);
-
-
 int main()
 {
     char salir = 'n';
@@ -13,21 +10,21 @@ int main()
     int num2;
     int rtaSuma;
     int rtaResta;
-    float rtaDiv;
     int rtaMult;
     int opcion;
+    int rtaFactA;
+    int rtaFactB;
     int flagA = 0;
     int flagB = 0;
     int flagOperaciones = 0;
     int flagMostrar = 0;
-    int rtaFactA;
-    int rtaFactB;
-    //menu();
+    float rtaDiv;
 
     do{
 
         system("cls");
 
+        printf("-----Bienvenido a la calculadora!----- \n\n");
         if(flagA == 0){
             printf("1. Ingresar 1er operando(A=x) \n");
         }else{
@@ -101,9 +98,8 @@ int main()
             printf("Las operaciones ya fueron realizadas. \n");
             system("pause");
             flagOperaciones = 1;
-            break;
         }
-
+        break;
     case 4:
         if(flagOperaciones == 0){
             printf("Primero debe realizar las operaciones \n");
@@ -127,10 +123,3 @@ int main()
     }while(salir == 'n');
     return 0;
 }
-
-
-/*int menu(void){
-
-
-    return 0;
-}*/
