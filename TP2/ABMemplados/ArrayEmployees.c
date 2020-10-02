@@ -62,8 +62,10 @@ int addEmployees(Employee empleados[],int tam,int id){
                 validacion = validacionCadena(nuevoEmpleado.name);
             }while(validacion == 1);
             printf("Ingrese salario: ");
+            fflush(stdin);
             scanf("%f", &nuevoEmpleado.salary);
             printf("Ingrese sector: ");
+            fflush(stdin);
             scanf("%d", &nuevoEmpleado.sector);
 
             empleados[indice] = nuevoEmpleado;
@@ -145,7 +147,7 @@ int removeEmployee(Employee empleados[],int tam){
 
             printf("*** BAJA DE EMPLEADOS ***\n\n");
             printEmployee(empleados[indice]);
-            printf("Confirma la baja? ");
+            printf("Confirma la baja(s/n)? ");
             fflush(stdin);
             scanf("%c", &confirmacion);
 
@@ -256,7 +258,7 @@ int modifyEmployee(Employee empleados[],int tam){
                 break;
             }
             if(!flagSalir && !flagDef){
-                printf("Confirma la modificacion? ");
+                printf("Confirma la modificacion(s/n)? ");
                 fflush(stdin);
                 scanf("%c", &confirmacion);
                 if(confirmacion == 's'){
@@ -286,7 +288,7 @@ void informeSalarios(Employee empleados[],int tam){
         }
         promedio = acum/contTotal;
         for(int i = 0; i < tam; i++){
-            if(empleados[i].salary > promedio){
+            if(!empleados[i].isEmpty && empleados[i].salary > promedio){
                 contMayorPromedio ++;
             }
         }
@@ -304,7 +306,7 @@ void formatearCadena(char cadena[]){
     int i = 0;
     cadena[0] = toupper(cadena[0]);
     while(cadena[i] != '\0'){
-        if(cadena[i] == ' '){
+        if(cadena[i] == ' ' || cadena[i] == 39){
             cadena[i + 1] = toupper(cadena[i + 1]);
         }
         i++;

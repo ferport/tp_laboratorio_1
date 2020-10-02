@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include "ArrayEmployees.h"
 
-#define TAM 5
+#define TAM 1000
 #define DESC 0
 #define ASC 1
 
@@ -104,7 +104,7 @@ int main()
             }
             break;
         case 5:
-            printf("Confirma salida?: ");
+            printf("Confirma salida(s/n)?: ");
             fflush(stdin);
             scanf("%c", &confirmacion);
             confirmacion = tolower(confirmacion);
