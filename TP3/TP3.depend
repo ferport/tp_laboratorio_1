@@ -229,3 +229,8 @@
 
 1604711003 c:\users\fernando\desktop\utn\tps-lab1\tp3\menus.h
 
+1604711054 source:c:\users\fernando\desktop\utn\tps-lab1\tp3\menus.c
+	<stdio.h>
+	<stdlib.h>
+	"menus.h"
+
